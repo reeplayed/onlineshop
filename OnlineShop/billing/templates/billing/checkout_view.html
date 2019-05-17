@@ -1,0 +1,36 @@
+{% extends 'account/base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+ <section class="checkout_area p_120">
+        	<div class="container">
+        		<div class="billing_details">
+        			<div class="row">
+        				<div class="col-lg-8">
+        					<h3>Billing Details</h3>
+        					<form class="row contact_form" action="#" method="post" >
+								{% csrf_token %}
+								{{form.as_p}}
+                                <button type="submit">Wyślij</button>
+							</form>
+        				</div>
+        				<div class="col-lg-4">
+        					<div class="order_box">
+        						<h2>Your Order</h2>
+        						<ul class="list">
+        							<li><a href="#">Product <span>Total</span></a></li>
+									{% for prod in cart.product.all %}
+        							<li><a href="">{{prod.name}} <span class="middle"></span> <span class="last">${{prod.price}}</span></a></li>
+									{% endfor %}
+        						</ul>
+        						<ul class="list list_2">
+        							<li><a href="#">Subtotal <span>${{cart.total}}</span></a></li>
+        							<li><a href="#">Shipping <span>$0.00</span></a></li>
+        							<li><a href="#">Total <span>${{cart.total}}</span></a></li>
+        						</ul>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+{% endblock %}

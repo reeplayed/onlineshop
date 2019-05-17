@@ -1,0 +1,27 @@
+{% extends 'account/base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<section class="login_box_area p_120">
+        	<div class="container">
+				<div class="row">
+					<div class="col-lg">
+						<div class="login_form_inner">
+							<h3>Log in to enter</h3>
+							<form class="row login_form"  method="post" id="contactForm" novalidate="novalidate">{% csrf_token %}
+								<div class="col-md-12 form-group">
+									{{form|crispy}}
+								</div>
+								<div class="col-md-12 form-group">
+									<button type="submit" value="submit" class="btn submit_btn">Log In</button>
+									<a href="#">Forgot Password?</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+        	</div>
+        </section>
+
+
+{% endblock %}
