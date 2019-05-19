@@ -10,13 +10,7 @@
         <title>ListAshop</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{% static 'account/css/bootstrap.css' %}">
-        <link rel="stylesheet" href="{% static 'account/vendors/linericon/style.css' %}">
         <link rel="stylesheet" href="{% static 'account/css/font-awesome.min.css' %}">
-        <link rel="stylesheet" href="{% static 'account/vendors/owl-carousel/owl.carousel.min.css' %}">
-        <link rel="stylesheet" href="{% static 'account/vendors/lightbox/simpleLightbox.css' %}">
-        <link rel="stylesheet" href="{% static 'account/vendors/nice-select/css/nice-select.css' %}">
-        <link rel="stylesheet" href="{% static 'account/vendors/animate-css/animate.css' %}">
-        <link rel="stylesheet" href="{% static 'account/vendors/jquery-ui/jquery-ui.css' %}">
         <!-- main css -->
         <link rel="stylesheet" href="{% static 'account/css/style.css' %}">
         <link rel="stylesheet" href="{% static 'account/css/responsive.css' %}">
@@ -66,7 +60,7 @@
 								{% endif %}
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
-								<li class="nav-item"><a href="{% url 'cart' %}" class="cart">{{cart.count}}<i class="lnr lnr lnr-cart"></i></a></li>
+								<li class="nav-item"><a href="{% url 'cart' %}" class="cart">Cart:{{cart.count}}</a></li>
 								<li class="nav-item"><a href="#" class="search"><i class="lnr lnr-magnifier"></i></a></li>
 							</ul>
 						</div>
@@ -90,11 +84,7 @@
         <!--<script src="{% static 'account/js/popper.js' %}"></script>-->
         <!--<script src="{% static 'account/js/bootstrap.min.js' %}"></script>-->
         <!--<script src="{% static 'account/js/stellar.js' %}"></script>-->
-        <!--<script src="{% static 'account/vendors/lightbox/simpleLightbox.min.js' %}"></script>-->
-        <!--<script src="{% static 'account/vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>-->
-        <!--<script src="{% static 'account/vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>-->
-        <!--<script src="{% static 'account/vendors/isotope/isotope-min.js' %}"></script>-->
-        <!--<script src="{% static 'account/vendors/owl-carousel/owl.carousel.min.js' %}"></script>-->
+
         <!--<script src="{% static 'account/js/jquery.ajaxchimp.min.js' %}"></script>-->
         <!--<script src="{% static 'account/js/mail-script.js' %}"></script>-->
         <!--<script src="{% static 'account/vendors/jquery-ui/jquery-ui.js' %}"></script>-->

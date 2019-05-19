@@ -91,7 +91,7 @@ class Product(models.Model):
 
 
 def product_pre_save_receiver(sender, instance, *args, **kwargs):
-    if instance.slug == None:
+    if instance.slug is None:
         instance.slug = unique_slug_generator(instance)
 
 

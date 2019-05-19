@@ -4,7 +4,6 @@ from shop.models import Product
 
 
 def cart(request):
-    e = 34
     cart = Cart.objects.get_cart(request)
     products = cart.product.all()
 

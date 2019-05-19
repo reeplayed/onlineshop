@@ -28,9 +28,8 @@ def shop(request):
 
 def detail_view(request, slug):
     cart = Cart.objects.get_cart(request)
-    qery = get_object_or_404(Product, slug=slug)
-    print(qery)
-    com = qery.comments.all()
+    query = get_object_or_404(Product, slug=slug)
+    com = query.comments.all()
     if request.method == 'POST':
         if request.user.is_authenticated:
             comment = request.POST.get('comment', None)
@@ -38,21 +37,21 @@ def detail_view(request, slug):
             if comment is not None and rating is not None:
                 new_comment = Comment(content=comment, author=request.user, rating=rating)
                 new_comment.save()
-                qery.comments.add(new_comment)
+                query.comments.add(new_comment)
 
         var = request.POST.get('foo')
         if var == 'remove':
-            cart.product.remove(qery)
+            cart.product.remove(query)
         if var == 'add':
-            cart.product.add(qery)
-    if qery in cart.product.all():
+            cart.product.add(query)
+    if query in cart.product.all():
         change = 1
     else:
         change = 2
 
     print(request.POST)
     context = {
-        'qs': qery,
+        'qs': query,
         'com': com,
         'cart': cart,
         'change': change,
